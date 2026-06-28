@@ -1,0 +1,29 @@
+📌 Introduction
+A container runtime is a lightweight process that manages and executes containers, 
+providing process isolation, resource control, and networking. In this project, we will develop a Mini-Docker using Python that 
+can create and run containers with features like process isolation, filesystem management, CPU/memory limits, and networking.
+
+🎯 Project Goals
+Build a basic container runtime similar to Docker.
+Use Linux namespaces for process, filesystem, and network isolation.
+Implement cgroups to limit CPU and memory usage.
+Set up a minimal filesystem for container execution.
+Allow command execution inside the container.
+
+🔧 Key Features
+Feature	Description
+Process Isolation	Uses os.unshare(CLONE_NEWPID) to isolate processes.
+Filesystem Isolation	Uses chroot() to provide an independent root filesystem.
+Resource Management	Uses cgroups to limit CPU and memory usage.
+Networking	Sets up a separate network namespace using veth interfaces.
+Command Execution	Runs user-specified commands inside the container.
+
+⚙️ Technologies Used
+Programming Language: Python
+System Calls: clone(), chroot(), execve(), unshare()
+Linux Features: Namespaces, cgroups, network isolation
+File Management: os and shutil modules for setting up root filesystems
+
+🚀 Expected Outcome
+By the end of this project, you will have a basic yet functional container runtime that mimics Docker’s core features.
+ This will help you understand container internals, improve system programming skills, and learn how Docker, LXC, and Kubernetes work under the hood.

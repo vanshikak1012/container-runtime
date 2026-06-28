@@ -1,0 +1,199 @@
+{"timestamp": "2025-04-10T16:52:55.319512", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T16:52:55.444046", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:52:56.073519", "container": "nginx", "cpu": 14.4, "memory": 10.01, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:52:56.643557", "container": "mysql", "cpu": 35.8, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:02.436527", "container": "nginx", "cpu": 0.0, "memory": 20.36, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:03.158544", "container": "mysql", "cpu": 24.2, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:08.696523", "container": "nginx", "cpu": 0.0, "memory": 20.36, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:09.217487", "container": "mysql", "cpu": 72.2, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:14.787538", "container": "nginx", "cpu": 0.0, "memory": 20.36, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:15.322054", "container": "mysql", "cpu": 35.2, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:20.889139", "container": "nginx", "cpu": 0.0, "memory": 20.36, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:21.405346", "container": "mysql", "cpu": 54.7, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:26.961893", "container": "nginx", "cpu": 0.0, "memory": 20.36, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:27.515178", "container": "mysql", "event": "stopped"}
+{"timestamp": "2025-04-10T16:53:28.588648", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:53:28.589794", "container": "mysql", "event": "restarted"}
+{"timestamp": "2025-04-10T16:53:28.590863", "container": "mysql", "cpu": 81.4, "memory": 9.84, "status": "High usage", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:34.119367", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:34.658569", "container": "mysql", "cpu": 52.3, "memory": 9.86, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:40.231544", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:40.748210", "container": "mysql", "cpu": 45.5, "memory": 9.86, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:46.305177", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:46.813624", "container": "mysql", "cpu": 70.9, "memory": 9.86, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:52.325276", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:52.845763", "container": "mysql", "cpu": 57.2, "memory": 9.86, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:58.362268", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:53:58.876439", "container": "mysql", "cpu": 76.2, "memory": 9.86, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:04.397978", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:04.900754", "container": "mysql", "cpu": 65.5, "memory": 9.86, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:10.416862", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:10.961066", "container": "mysql", "event": "stopped"}
+{"timestamp": "2025-04-10T16:54:11.979965", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:54:11.981102", "container": "mysql", "event": "restarted"}
+{"timestamp": "2025-04-10T16:54:11.981942", "container": "mysql", "cpu": 83.1, "memory": 9.86, "status": "High usage", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:17.498304", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:18.019971", "container": "mysql", "cpu": 78.2, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:23.562042", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:24.091696", "container": "mysql", "cpu": 73.9, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:29.635702", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:30.158222", "container": "mysql", "cpu": 69.3, "memory": 9.28, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:35.698465", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:36.222288", "container": "mysql", "cpu": 65.9, "memory": 9.28, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:41.769499", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:42.283234", "container": "mysql", "cpu": 76.3, "memory": 9.25, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:47.827432", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:48.341428", "container": "mysql", "cpu": 51.8, "memory": 9.25, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:53.860999", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:54:54.444102", "container": "mysql", "cpu": 53.8, "memory": 9.25, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:00.115780", "container": "nginx", "cpu": 0.0, "memory": 19.83, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:00.617703", "container": "mysql", "cpu": 78.1, "memory": 9.25, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:07.994266", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T16:55:08.062363", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:55:08.630003", "container": "nginx", "cpu": 23.1, "memory": 12.67, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:09.162581", "container": "mysql", "cpu": 38.3, "memory": 9.85, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:18.966329", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T16:55:18.984577", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:55:19.639193", "container": "nginx", "cpu": 3.0, "memory": 8.23, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:20.194849", "container": "mysql", "cpu": 8.5, "memory": 9.85, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:25.812271", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:26.474974", "container": "mysql", "cpu": 38.4, "memory": 9.85, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:32.062965", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:32.580623", "container": "mysql", "cpu": 48.5, "memory": 9.85, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:38.162908", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:38.682878", "container": "mysql", "cpu": 45.2, "memory": 9.85, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:44.263887", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:44.787333", "container": "mysql", "cpu": 33.0, "memory": 9.85, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:50.399250", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:50.943593", "container": "mysql", "cpu": 34.6, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:56.492544", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:55:57.049954", "container": "mysql", "cpu": 36.5, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:02.621983", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:03.154692", "container": "mysql", "cpu": 50.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:08.722834", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:09.246702", "container": "mysql", "cpu": 62.8, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:14.801013", "container": "nginx", "cpu": 0.0, "memory": 20.37, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:15.334268", "container": "mysql", "cpu": 50.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:20.944447", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:21.602382", "container": "mysql", "cpu": 28.7, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:27.226554", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:27.787168", "container": "mysql", "cpu": 42.0, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:33.333838", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:33.873182", "container": "mysql", "cpu": 49.4, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:39.428912", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:39.956350", "container": "mysql", "cpu": 41.6, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:45.512899", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:46.054113", "container": "mysql", "cpu": 47.9, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:51.625290", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:52.157618", "container": "mysql", "cpu": 58.9, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:57.705279", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:56:58.218766", "container": "mysql", "cpu": 51.9, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:03.756390", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:04.299778", "container": "mysql", "cpu": 40.4, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:09.872485", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:10.395821", "container": "mysql", "cpu": 44.9, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:15.968864", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:16.496707", "container": "mysql", "cpu": 47.5, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:22.114921", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:22.663992", "container": "mysql", "cpu": 28.7, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:28.324322", "container": "nginx", "cpu": 0.0, "memory": 20.34, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:28.893090", "container": "mysql", "cpu": 52.3, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:34.495886", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:35.053758", "container": "mysql", "cpu": 45.0, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:40.656132", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:41.261125", "container": "mysql", "cpu": 23.3, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:46.877885", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:47.449912", "container": "mysql", "cpu": 35.6, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:53.086226", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:53.667433", "container": "mysql", "cpu": 32.4, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:59.280363", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:57:59.813685", "container": "mysql", "cpu": 38.2, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:05.429616", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:06.001189", "container": "mysql", "cpu": 52.1, "memory": 9.82, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:11.605213", "container": "nginx", "cpu": 0.0, "memory": 20.32, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:19.877907", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T16:58:20.011255", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:58:20.713215", "container": "nginx", "cpu": 14.6, "memory": 13.57, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:21.269200", "container": "mysql", "cpu": 16.9, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:33.269648", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T16:58:33.449321", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:58:34.159556", "container": "nginx", "cpu": 3.0, "memory": 8.22, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:34.723331", "container": "mysql", "cpu": 2.8, "memory": 8.18, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:40.343934", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:40.908910", "container": "mysql", "cpu": 38.8, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:56.113621", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T16:58:56.342124", "container": "mysql", "event": "started"}
+{"timestamp": "2025-04-10T16:58:57.184165", "container": "nginx", "cpu": 0.0, "memory": 8.23, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:58:57.747628", "container": "mysql", "cpu": 0.0, "memory": 8.2, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:03.390688", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:03.933234", "container": "mysql", "cpu": 34.7, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:09.521926", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:10.092571", "container": "mysql", "cpu": 35.7, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:15.769462", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:16.360052", "container": "mysql", "cpu": 31.9, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:22.135819", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:22.695975", "container": "mysql", "cpu": 22.4, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:28.324507", "container": "nginx", "cpu": 0.0, "memory": 20.39, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:28.889469", "container": "mysql", "cpu": 36.0, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:34.635100", "container": "nginx", "cpu": 0.0, "memory": 20.42, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:35.179036", "container": "mysql", "cpu": 31.7, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:40.886123", "container": "nginx", "cpu": 0.0, "memory": 20.42, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:41.472370", "container": "mysql", "cpu": 26.7, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:47.229585", "container": "nginx", "cpu": 0.0, "memory": 20.42, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:47.820291", "container": "mysql", "cpu": 21.2, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:53.552608", "container": "nginx", "cpu": 0.0, "memory": 20.42, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:54.103288", "container": "mysql", "cpu": 31.3, "memory": 9.87, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T16:59:59.694622", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:00.255435", "container": "mysql", "cpu": 22.3, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:06.008421", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:06.565865", "container": "mysql", "cpu": 33.7, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:12.197730", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:12.766243", "container": "mysql", "cpu": 24.8, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:18.587975", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:19.134515", "container": "mysql", "cpu": 23.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:24.825474", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:25.535312", "container": "mysql", "cpu": 22.1, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:31.230140", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:31.840333", "container": "mysql", "cpu": 30.8, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:37.465737", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:38.029964", "container": "mysql", "cpu": 39.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:43.745772", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:44.323972", "container": "mysql", "cpu": 24.4, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:49.935677", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:50.519354", "container": "mysql", "cpu": 26.9, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:56.155698", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:00:56.714761", "container": "mysql", "cpu": 36.5, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:02.329995", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:02.884585", "container": "mysql", "cpu": 25.5, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:08.672054", "container": "nginx", "cpu": 0.0, "memory": 20.4, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:09.246435", "container": "mysql", "cpu": 19.1, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:14.852108", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:15.418328", "container": "mysql", "cpu": 36.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:21.064161", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:21.690611", "container": "mysql", "cpu": 25.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:27.295723", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:27.864745", "container": "mysql", "cpu": 41.3, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:33.519474", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:34.091255", "container": "mysql", "cpu": 24.7, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:39.702185", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:40.268408", "container": "mysql", "cpu": 36.0, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:45.865453", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:46.431027", "container": "mysql", "cpu": 33.2, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:52.093228", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:52.749868", "container": "mysql", "cpu": 39.3, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:58.378262", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:01:58.939608", "container": "mysql", "cpu": 25.1, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:04.606908", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:05.178092", "container": "mysql", "cpu": 30.2, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:10.849343", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:11.505594", "container": "mysql", "cpu": 19.1, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:17.141966", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:17.714488", "container": "mysql", "cpu": 35.6, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:23.499165", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:24.076440", "container": "mysql", "cpu": 27.1, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:29.785036", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:30.357079", "container": "mysql", "cpu": 22.4, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:35.859730", "container": "nginx", "cpu": 0.0, "memory": 20.38, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:36.362467", "container": "mysql", "cpu": 12.5, "memory": 9.84, "status": "Healthy", "event": "auto-monitor"}
+{"timestamp": "2025-04-10T17:02:51.131156", "container": "nginx", "event": "started"}
+{"timestamp": "2025-04-10T17:02:51.612829", "container": "mysql", "event": "started"}

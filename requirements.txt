@@ -1,0 +1,4 @@
+psutil
+flask
+scikit-learn
+flask-cors

@@ -1,0 +1,149 @@
+
+Container Runtime (Mini-Docker) in Python 🚀
+A container runtime is responsible for creating, managing, and running containers. This project will help you build a mini-Docker using Python by leveraging Linux namespaces, cgroups, chroot, and system calls.
+
+📌 Key Features
+✅ Create an isolated process (container)
+✅ Limit CPU & Memory usage using cgroups
+✅ Set up a filesystem for the container
+✅ Provide networking support using namespaces
+✅ Execute user commands inside the container
+
+🛠️ Technologies Used
+Python (subprocess, os, shutil)
+Linux System Calls (clone(), chroot(), execve(), unshare())
+Cgroups (CPU & memory limits)
+Networking (veth interfaces, network namespaces)
+🔧 Step-by-Step Implementation
+1️⃣ Create an Isolated Process
+Python's os and subprocess modules help create a new process with its own namespace.
+
+python
+Copy
+Edit
+import os
+import subprocess
+
+def run_container():
+    print("🔹 Starting a new container...")
+    pid = os.fork()
+    if pid == 0:  # Child process (container)
+        os.unshare(os.CLONE_NEWUTS | os.CLONE_NEWPID | os.CLONE_NEWNS)  # Isolate hostname, process tree, and filesystem
+        os.chroot("/path/to/rootfs")  # Change root filesystem
+        os.chdir("/")  # Move to root
+        os.execvp("/bin/sh", ["/bin/sh"])  # Start a shell inside the container
+    else:
+        os.waitpid(pid, 0)  # Wait for the container process to exit
+
+run_container()
+✅ This code creates a process inside an isolated namespace.
+
+2️⃣ Limit CPU & Memory with Cgroups
+We create a cgroup directory and set resource limits.
+
+python
+Copy
+Edit
+import os
+
+def set_cgroups(container_id):
+    cpu_cgroup = f"/sys/fs/cgroup/cpu/container_{container_id}"
+    mem_cgroup = f"/sys/fs/cgroup/memory/container_{container_id}"
+    
+    os.makedirs(cpu_cgroup, exist_ok=True)
+    os.makedirs(mem_cgroup, exist_ok=True)
+
+    # Limit CPU usage to 50%
+    with open(f"{cpu_cgroup}/cpu.cfs_quota_us", "w") as f:
+        f.write("50000")  # 50% CPU
+
+    # Limit Memory to 128MB
+    with open(f"{mem_cgroup}/memory.limit_in_bytes", "w") as f:
+        f.write("134217728")  # 128MB in bytes
+
+    # Add process to cgroup
+    with open(f"{cpu_cgroup}/tasks", "w") as f:
+        f.write(str(os.getpid()))
+    with open(f"{mem_cgroup}/tasks", "w") as f:
+        f.write(str(os.getpid()))
+
+set_cgroups(1)
+✅ This ensures CPU and memory constraints for the container.
+
+3️⃣ Set Up a Minimal Filesystem
+We provide an isolated root filesystem using chroot().
+
+python
+Copy
+Edit
+import shutil
+
+def setup_filesystem():
+    rootfs = "/path/to/rootfs"
+    os.makedirs(rootfs, exist_ok=True)
+
+    # Copy essential system binaries
+    for folder in ["bin", "lib", "lib64", "usr"]:
+        shutil.copytree(f"/{folder}", f"{rootfs}/{folder}", dirs_exist_ok=True)
+
+    return rootfs
+
+rootfs = setup_filesystem()
+✅ This creates a minimal root filesystem for the container.
+
+4️⃣ Create a Virtual Network Interface
+Containers need their own network namespace.
+
+python
+Copy
+Edit
+def setup_network(container_id):
+    os.system(f"ip link add veth{container_id} type veth peer name veth{container_id}_host")
+    os.system(f"ip link set veth{container_id} netns {os.getpid()}")
+    os.system(f"ip addr add 192.168.1.{container_id}/24 dev veth{container_id}")
+
+setup_network(1)
+✅ This creates a separate network interface for the container.
+
+5️⃣ Run Commands Inside the Container
+Now, we execute user-specified commands inside the container.
+
+python
+Copy
+Edit
+import sys
+
+def run_container(command):
+    pid = os.fork()
+    if pid == 0:
+        os.unshare(os.CLONE_NEWUTS | os.CLONE_NEWPID | os.CLONE_NEWNS)
+        os.chroot("/path/to/rootfs")
+        os.chdir("/")
+        os.execvp(command[0], command)
+    else:
+        os.waitpid(pid, 0)
+
+if __name__ == "__main__":
+    command = sys.argv[1:] if len(sys.argv) > 1 else ["/bin/sh"]
+    run_container(command)
+✅ Now, you can start a container with:
+
+bash
+Copy
+Edit
+python mini_docker.py /bin/bash
+🎯 Final Features
+Feature	Implementation
+Process Isolation	os.unshare(CLONE_NEWPID)
+Filesystem Isolation	chroot()
+Resource Limits	Cgroups (cpu.cfs_quota_us, memory.limit_in_bytes)
+Networking	veth interfaces
+Command Execution	execvp()
+🚀 Advanced Enhancements
+🔹 Mount volumes for persistent storage
+🔹 Run multiple containers concurrently
+🔹 Docker CLI-like commands (mini-docker run ubuntu /bin/bash)
+🔹 Containerized applications (Nginx, MySQL inside containers)
+-------------------------------------------------------------------------------------------
+
+Project: Custom Container Runtime (Mini Docker) Using Linux Namespaces

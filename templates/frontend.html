@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI-Powered Container Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Login Form -->
+  <div id="loginForm" class="flex flex-col items-center justify-center min-h-screen bg-gray-900">
+    <div class="p-8 bg-gray-800 rounded-xl shadow-lg w-80">
+      <h2 class="text-2xl font-bold mb-4 text-white text-center">Login</h2>
+      <input id="username" type="text" placeholder="Username" class="w-full p-2 mb-3 rounded text-black" />
+      <input id="password" type="password" placeholder="Password" class="w-full p-2 mb-3 rounded text-black" />
+      <button onclick="login()" class="bg-blue-600 px-4 py-2 rounded w-full">Login</button>
+      <p id="loginError" class="text-red-400 mt-2 text-center hidden">Invalid credentials</p>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" style="display: none;" class="p-6">
+    <h1 class="text-3xl font-bold mb-6">AI-Powered Container Dashboard</h1>
+
+    <!-- AI Alert Banner -->
+    <div id="aiAlertBanner" class="hidden bg-red-600 text-white p-3 text-center font-bold mb-4"></div>
+
+    <!-- Email Alert Toggle -->
+    <div class="mb-4">
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" id="emailAlertToggle" onchange="toggleEmailAlert()">
+        <span>Receive Email Alerts for Anomalies</span>
+      </label>
+    </div>
+
+    <!-- Container Status Table -->
+    <div class="bg-gray-800 p-4 rounded-xl mb-6">
+      <h2 class="text-xl font-semibold mb-3">Container Status</h2>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-gray-700">
+            <th class="p-2">Container</th>
+            <th class="p-2">CPU (%)</th>
+            <th class="p-2">Memory (MB)</th>
+            <th class="p-2">Status</th>
+            <th class="p-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="statusTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Charts Section -->
+    <div id="chartsContainer" class="grid grid-cols-2 gap-6 mb-8"></div>
+
+    <!-- Logs -->
+    <div class="bg-gray-800 p-4 rounded-xl shadow-md mb-6">
+      <h2 class="text-xl font-semibold mb-3">Container Logs</h2>
+      <pre id="logDisplay" class="text-sm bg-gray-900 p-2 rounded overflow-y-auto max-h-64"></pre>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div id="toastContainer" class="fixed top-5 right-5 z-50 space-y-2"></div>
+
+<script>
+const BASE_URL = "http://54.202.154.20:5000";
+const labels = [];
+let charts = {};
+let cpuData = {};
+let memData = {};
+let predictedCpu = {};
+let predictedMem = {};
+let emailAlertEnabled = false;
+
+// --------------- Toast Function ----------------
+function showToast(msg, type="error") {
+  const toast = document.createElement("div");
+  toast.className = `px-4 py-2 rounded text-sm shadow-md ${type==="error" ? "bg-red-600" : "bg-green-600"}`;
+  toast.textContent = msg;
+  document.getElementById("toastContainer").appendChild(toast);
+  setTimeout(()=>toast.remove(), 4000);
+}
+
+// --------------- Email Alert Toggle ----------------
+function toggleEmailAlert(){
+  emailAlertEnabled = document.getElementById("emailAlertToggle").checked;
+  showToast(`Email alerts ${emailAlertEnabled ? "enabled" : "disabled"}`, "success");
+}
+
+// --------------- Login Function ----------------
+async function login() {
+  const user = document.getElementById("username").value.trim();
+  const pass = document.getElementById("password").value.trim();
+  try {
+    const res = await fetch(`${BASE_URL}/login`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      credentials: "include",
+      body: JSON.stringify({username: user, password: pass})
+    });
+    if(res.ok) {
+      document.getElementById("loginForm").style.display="none";
+      document.getElementById("dashboard").style.display="block";
+      fetchMetrics();
+      fetchAnomalies();
+      fetchLogs();
+      fetchPredictions();
+      setInterval(fetchMetrics,5000);
+      setInterval(fetchAnomalies,5000);
+      setInterval(fetchLogs,7000);
+      setInterval(fetchPredictions,5000);
+      showToast("Login successful!","success");
+    } else {
+      document.getElementById("loginError").classList.remove("hidden");
+    }
+  } catch(err) {
+    showToast("Login request failed","error");
+  }
+}
+
+// --------------- Fetch Metrics ----------------
+async function fetchMetrics() {
+  try {
+    const res = await fetch(`${BASE_URL}/autoheal/status`, {credentials:"include"});
+    if(!res.ok) throw new Error("Failed to fetch metrics");
+    const data = await res.json();
+
+    const now = new Date().toLocaleTimeString();
+    if(labels.length>20) labels.shift();
+    labels.push(now);
+
+    const tableBody = document.getElementById("statusTableBody");
+    tableBody.innerHTML="";
+    data.forEach(c=>{
+      if(!cpuData[c.container]){
+        cpuData[c.container]=[];
+        memData[c.container]=[];
+        predictedCpu[c.container]=[];
+        predictedMem[c.container]=[];
+        createChartsForContainer(c.container);
+      }
+
+      if(cpuData[c.container].length>20){
+        cpuData[c.container].shift();
+        memData[c.container].shift();
+        predictedCpu[c.container].shift();
+        predictedMem[c.container].shift();
+      }
+
+      cpuData[c.container].push(c.cpu);
+      memData[c.container].push(c.memory);
+
+      const statusColor = c.status==="Healthy"?"text-green-400":
+                          c.status==="High usage"?"text-yellow-400":"text-red-400";
+
+      tableBody.innerHTML+=`
+      <tr class="border-b border-gray-700">
+        <td class="p-2">${c.container}</td>
+        <td class="p-2">${c.cpu}</td>
+        <td class="p-2">${c.memory}</td>
+        <td class="p-2 ${statusColor} font-bold">${c.status}</td>
+        <td class="p-2 space-x-1">
+          <button onclick="controlContainer('${c.container}','start')" class="bg-green-600 px-2 py-1 rounded">Start</button>
+          <button onclick="controlContainer('${c.container}','stop')" class="bg-yellow-500 px-2 py-1 rounded">Stop</button>
+          <button onclick="controlContainer('${c.container}','restart')" class="bg-blue-600 px-2 py-1 rounded">Restart</button>
+        </td>
+      </tr>
+      `;
+
+      updateCharts(c.container, now);
+    });
+  } catch(e){
+    showToast("Unable to fetch container metrics","error");
+  }
+}
+
+// --------------- Fetch Predictions ----------------
+async function fetchPredictions(){
+  try{
+    const res = await fetch(`${BASE_URL}/predictions`, {credentials:"include"});
+    if(!res.ok) throw new Error("Failed to fetch predictions");
+    const data = await res.json();
+    const now = new Date().toLocaleTimeString();
+
+    data.forEach(p=>{
+      if(!predictedCpu[p.container]) return;
+      predictedCpu[p.container].push(p.predicted_cpu);
+      predictedMem[p.container].push(p.predicted_mem);
+      if(predictedCpu[p.container].length>20){
+        predictedCpu[p.container].shift();
+        predictedMem[p.container].shift();
+      }
+    });
+  }catch(err){
+    console.error("Error fetching predictions", err);
+  }
+}
+
+// --------------- Fetch Anomalies ----------------
+async function fetchAnomalies() {
+  try{
+    const res = await fetch(`${BASE_URL}/anomalies`, {credentials:"include"});
+    if(!res.ok) throw new Error("Failed to fetch anomalies");
+    const anomalies = await res.json();
+    const alertBanner = document.getElementById("aiAlertBanner");
+
+    if(anomalies.length > 0){
+      // Group anomalies per container and show top 2
+      const grouped = {};
+      anomalies.forEach(a => {
+        if(!grouped[a.container]) grouped[a.container] = [];
+        grouped[a.container].push(a.reason);
+      });
+
+      const messages = Object.keys(grouped).map(c => {
+        const topReasons = [...new Set(grouped[c])].slice(0,2);
+        return `${c} (${topReasons.join(", ")})`;
+      });
+
+      alertBanner.textContent = `🚨 AI Anomaly Detected: ${messages.join("; ")}`;
+      alertBanner.classList.remove("hidden");
+
+      // Send email if enabled
+      if(emailAlertEnabled){
+        await fetch(`${BASE_URL}/send-email-anomaly`, {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(anomalies)
+        });
+      }
+
+    } else {
+      alertBanner.classList.add("hidden");
+    }
+
+  }catch(err){
+    console.error("Error fetching anomalies:", err);
+  }
+}
+
+// --------------- Charts ----------------
+function createChartsForContainer(name){
+  const container = document.getElementById("chartsContainer");
+  const div = document.createElement("div");
+  div.className="bg-gray-800 p-4 rounded-xl";
+  div.innerHTML=`<h2 class="text-xl font-semibold mb-2">${name} CPU & Memory</h2>
+                 <canvas id="chart-${name}"></canvas>`;
+  container.appendChild(div);
+
+  charts[name] = new Chart(document.getElementById(`chart-${name}`), {
+    type:'line',
+    data:{
+      labels:[...labels],
+      datasets:[
+        {label:`CPU %`, data:[], borderColor:'rgba(0,123,255,1)', backgroundColor:'rgba(0,123,255,0.2)', tension:0.2, fill:true},
+        {label:`Memory MB`, data:[], borderColor:'rgba(255,193,7,1)', backgroundColor:'rgba(255,193,7,0.2)', tension:0.2, fill:true},
+        {label:`CPU Predicted`, data:[], borderColor:'rgba(0,255,123,1)', borderDash:[5,5], fill:false, tension:0.2},
+        {label:`Memory Predicted`, data:[], borderColor:'rgba(255,0,123,1)', borderDash:[5,5], fill:false, tension:0.2}
+      ]
+    },
+    options:{responsive:true, animation:false, scales:{y:{beginAtZero:true}}, plugins:{legend:{position:'top'}}}
+  });
+}
+
+function updateCharts(name, time){
+  const chart = charts[name];
+  if(!chart) return;
+
+  if(chart.data.labels.length>=20){
+    chart.data.labels.shift();
+    chart.data.datasets.forEach(ds=>ds.data.shift());
+  }
+
+  chart.data.labels.push(time);
+  chart.data.datasets[0].data.push(cpuData[name].slice(-1)[0]);
+  chart.data.datasets[1].data.push(memData[name].slice(-1)[0]);
+  chart.data.datasets[2].data.push(predictedCpu[name].slice(-1)[0] || null);
+  chart.data.datasets[3].data.push(predictedMem[name].slice(-1)[0] || null);
+
+  chart.update("none");
+}
+
+// --------------- Logs ----------------
+async function fetchLogs(){
+  try{
+    const res = await fetch(`${BASE_URL}/logs`, {credentials:"include"});
+    if(!res.ok) throw new Error("Failed to fetch logs");
+    const logs = await res.json();
+    document.getElementById("logDisplay").textContent = logs.map(l=>`[${l.timestamp}] ${l.container}: ${l.event}`).join("\n");
+  }catch(err){
+    document.getElementById("logDisplay").textContent = "Logs unavailable.";
+  }
+}
+
+// --------------- Control Container ----------------
+async function controlContainer(name, action){
+  try{
+    const res = await fetch(`${BASE_URL}/control/${name}/${action}`, {method:"POST", credentials:"include"});
+    if(!res.ok) throw new Error("Failed to send command");
+    showToast(`${name} ${action}ed successfully!`,"success");
+    fetchMetrics();
+  }catch(err){
+    showToast(`Failed to ${action} ${name}`,"error");
+  }
+}
+</script>
+</body>
+</html>
