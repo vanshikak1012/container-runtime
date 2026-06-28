@@ -1,7 +1,38 @@
-venv/
+# Python
 __pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Database
+*.db
+
+# Logs
+*.log
+logs.txt
+container_logs.txt
+container_logs.json
+nohup.out
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+
+# Personal files
+.bash_history
+.bash_logout
+.bashrc
+.profile
 .cache/
 .ssh/
-*.db
-*.log
-nohup.out
+
+# IDE
+.vscode/
+.idea/
